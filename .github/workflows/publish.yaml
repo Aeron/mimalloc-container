@@ -25,6 +25,9 @@ jobs:
           string: ${{ env.GITHUB_REGISTRY_IMAGE }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+        # NOTE: by default, it uses tonistiigi/binfmt:latest, and it is 7.0.0
+        with:
+          image: tonistiigi/binfmt:qemu-v8.1.5
       - name: Build Image
         id: build-image
         uses: redhat-actions/buildah-build@v2
