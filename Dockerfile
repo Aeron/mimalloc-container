@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.19
+ARG ALPINE_VERSION=edge
 
 ### Builder stage ###
 FROM docker.io/library/alpine:${ALPINE_VERSION} as builder
