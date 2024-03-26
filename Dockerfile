@@ -27,4 +27,7 @@ RUN cmake -DMI_SECURE=OFF .. && \
 ### Runtime stage ###
 FROM scratch
 
+LABEL org.opencontainers.image.source https://github.com/Aeron/mimalloc-container
+LABEL org.opencontainers.image.licenses MIT
+
 COPY --from=builder /usr/src/mimalloc/build/*.so /usr/lib/.
