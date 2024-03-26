@@ -4,9 +4,13 @@ ARG ALPINE_VERSION=edge
 FROM docker.io/library/alpine:${ALPINE_VERSION} as builder
 
 RUN apk add --update --no-cache \
-    build-base \
     cmake \
-    mold
+    g++ \
+    gcc \
+    make \
+    mold \
+    musl-dev \
+    openssl-dev
 
 WORKDIR /usr/src
 
